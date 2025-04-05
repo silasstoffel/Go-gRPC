@@ -1,0 +1,31 @@
+// Command to generate the Go code:
+// protoc --go_out=. --go-grpc_out=. proto/course_category.proto
+
+syntax = "proto3";
+
+package pb;
+
+option go_package = "internal/pb";
+
+
+message Category {
+    int32 id = 1;
+    string name = 2;
+    string description = 3;
+}
+
+message CategoryOutput {
+    repeated Category category = 1;
+}
+
+message CreateCategoryInput {
+    string name = 1;
+    string description = 2;
+}
+
+service CategoryService {
+
+    rpc CreateCategory (CreateCategoryInput) returns (Category) {}
+
+};
+
