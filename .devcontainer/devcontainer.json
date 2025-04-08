@@ -1,0 +1,19 @@
+{
+    "name": "Golang DevContainer",
+    "dockerComposeFile": "../docker-compose.yml",
+    "service": "Go-gRPC",
+    "workspaceFolder": "/app",
+    "customizations": {
+      "vscode": {
+        "settings": {
+          "go.toolsManagement.autoUpdate": true,
+          "go.useLanguageServer": true
+        },
+        "extensions": [
+            "golang.go"
+        ]
+      }
+    },
+    "remoteUser": "root"
+  }
+  
