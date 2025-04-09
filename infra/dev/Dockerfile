@@ -12,6 +12,7 @@ RUN apt-get update && apt-get install -y unzip curl && \
 # https://grpc.io/docs/languages/go/quickstart/
 RUN go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
 RUN go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
+RUN go install github.com/ktr0731/evans@latest
 
 RUN export PATH="$PATH:$(go env GOPATH)/bin"
 
