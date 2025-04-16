@@ -24,9 +24,9 @@ func (c *CategoryService) CreateCategory(ctx context.Context, input *pb.CreateCa
     if err != nil {
         return nil, err
     }
-	
+
     return &pb.Category{
-		Id:  category.ID, 
+		Id:  category.ID,
 		Name: category.Name,
 		Description: category.Description,
 	}, nil

@@ -10,18 +10,18 @@ import (
 	"github.com/silasstoffel/Go-gRPC/internal/database"
 	"github.com/silasstoffel/Go-gRPC/internal/service"
 	"github.com/silasstoffel/Go-gRPC/internal/pb"
-	
+
 )
 
 func main() {
 	db, error := sql.Open("sqlite3", "./database.sqlite")
-	
+
 	if error != nil {
 		panic(error)
 	}
 
 	defer db.Close()
-	
+
 	migrate(db)
 
 	categoryDb := database.NewCategory(db)
@@ -30,7 +30,7 @@ func main() {
 	grpcServer := grpc.NewServer()
 	pb.RegisterCategoryServiceServer(grpcServer, categoryService)
 	reflection.Register(grpcServer)
-	
+
 	lis, err := net.Listen("tcp", ":50051")
 	if err != nil {
 		panic(err)

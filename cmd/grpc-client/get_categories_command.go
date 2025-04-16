@@ -28,6 +28,4 @@ func main() {
 
 	log.Println("Categories:")
 	for _, category := range response.Categories {
-		log.Printf("Id: %s, Name: %s, Description: %s", category.Id, category.Name, category.Description)
-	}
 }
