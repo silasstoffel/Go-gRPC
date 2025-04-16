@@ -2,7 +2,7 @@
 
 ## Setup
 
-```
+```shell
 docker-compose up -d
 
 # accessing the container
@@ -11,4 +11,15 @@ docker-compose up -d
 
 # run GRPC server
 go run cmd/grpc-server/main.go
+```
+
+**How use Evans gRPC client**
+
+```shell
+evans -r repl
+
+package pb
+
+service CategoryService
+
 ```

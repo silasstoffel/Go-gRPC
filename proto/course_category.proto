@@ -7,6 +7,7 @@ package pb;
 
 option go_package = "internal/pb";
 
+message Blank {}
 
 message Category {
     string id = 1;
@@ -18,6 +19,10 @@ message CategoryOutput {
     repeated Category category = 1;
 }
 
+message GetCategoriesOutput {
+    repeated Category categories = 1;
+}
+
 message CreateCategoryInput {
     string name = 1;
     string description = 2;
@@ -26,6 +31,8 @@ message CreateCategoryInput {
 service CategoryService {
 
     rpc CreateCategory (CreateCategoryInput) returns (Category) {}
+
+    rpc GetCategories (Blank) returns (GetCategoriesOutput) {}
 
 };
 
