@@ -9,6 +9,7 @@ import (
 )
 
 func main() {
+    id := "f2791b29-4a5b-435a-969f-724beb708b8b"
 	conn, err := grpc.Dial("localhost:50051", grpc.WithInsecure())
 
 	if err != nil {
@@ -20,14 +21,13 @@ func main() {
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
 	defer cancel()
 
-	response, err := c.GetCategories(ctx, &pb.Blank{})
+	response, err := c.GetCategory(ctx, &pb.GetCategoryInput{Id: id})
 
 	if err != nil {
-		log.Fatalf("could not get categories: %v", err)
+		log.Fatalf("Could not get category by id: %v Detail: %v", id, err)
 	}
 
-	log.Println("Categories:")
-	for _, category := range response.Categories {
-        log.Printf("Id: %s, Name: %s, Description: %s", category.Id, category.Name, category.Description)
-    }
+    log.Printf("Id: %s", response.Id)
+    log.Printf("Name: %s", response.Name)
+    log.Printf("Description: %s", response.Description)
 }

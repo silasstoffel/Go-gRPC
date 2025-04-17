@@ -260,6 +260,50 @@ func (x *CreateCategoryInput) GetDescription() string {
 	return ""
 }
 
+type GetCategoryInput struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetCategoryInput) Reset() {
+	*x = GetCategoryInput{}
+	mi := &file_proto_course_category_proto_msgTypes[5]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetCategoryInput) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetCategoryInput) ProtoMessage() {}
+
+func (x *GetCategoryInput) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_course_category_proto_msgTypes[5]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetCategoryInput.ProtoReflect.Descriptor instead.
+func (*GetCategoryInput) Descriptor() ([]byte, []int) {
+	return file_proto_course_category_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *GetCategoryInput) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
 var File_proto_course_category_proto protoreflect.FileDescriptor
 
 const file_proto_course_category_proto_rawDesc = "" +
@@ -278,10 +322,13 @@ const file_proto_course_category_proto_rawDesc = "" +
 	"categories\"K\n" +
 	"\x13CreateCategoryInput\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12 \n" +
-	"\vdescription\x18\x02 \x01(\tR\vdescription2\x83\x01\n" +
+	"\vdescription\x18\x02 \x01(\tR\vdescription\"\"\n" +
+	"\x10GetCategoryInput\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id2\xb8\x01\n" +
 	"\x0fCategoryService\x129\n" +
 	"\x0eCreateCategory\x12\x17.pb.CreateCategoryInput\x1a\f.pb.Category\"\x00\x125\n" +
-	"\rGetCategories\x12\t.pb.Blank\x1a\x17.pb.GetCategoriesOutput\"\x00B\rZ\vinternal/pbb\x06proto3"
+	"\rGetCategories\x12\t.pb.Blank\x1a\x17.pb.GetCategoriesOutput\"\x00\x123\n" +
+	"\vGetCategory\x12\x14.pb.GetCategoryInput\x1a\f.pb.Category\"\x00B\rZ\vinternal/pbb\x06proto3"
 
 var (
 	file_proto_course_category_proto_rawDescOnce sync.Once
@@ -295,23 +342,26 @@ func file_proto_course_category_proto_rawDescGZIP() []byte {
 	return file_proto_course_category_proto_rawDescData
 }
 
-var file_proto_course_category_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
+var file_proto_course_category_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
 var file_proto_course_category_proto_goTypes = []any{
 	(*Blank)(nil),               // 0: pb.Blank
 	(*Category)(nil),            // 1: pb.Category
 	(*CategoryOutput)(nil),      // 2: pb.CategoryOutput
 	(*GetCategoriesOutput)(nil), // 3: pb.GetCategoriesOutput
 	(*CreateCategoryInput)(nil), // 4: pb.CreateCategoryInput
+	(*GetCategoryInput)(nil),    // 5: pb.GetCategoryInput
 }
 var file_proto_course_category_proto_depIdxs = []int32{
 	1, // 0: pb.CategoryOutput.category:type_name -> pb.Category
 	1, // 1: pb.GetCategoriesOutput.categories:type_name -> pb.Category
 	4, // 2: pb.CategoryService.CreateCategory:input_type -> pb.CreateCategoryInput
 	0, // 3: pb.CategoryService.GetCategories:input_type -> pb.Blank
-	1, // 4: pb.CategoryService.CreateCategory:output_type -> pb.Category
-	3, // 5: pb.CategoryService.GetCategories:output_type -> pb.GetCategoriesOutput
-	4, // [4:6] is the sub-list for method output_type
-	2, // [2:4] is the sub-list for method input_type
+	5, // 4: pb.CategoryService.GetCategory:input_type -> pb.GetCategoryInput
+	1, // 5: pb.CategoryService.CreateCategory:output_type -> pb.Category
+	3, // 6: pb.CategoryService.GetCategories:output_type -> pb.GetCategoriesOutput
+	1, // 7: pb.CategoryService.GetCategory:output_type -> pb.Category
+	5, // [5:8] is the sub-list for method output_type
+	2, // [2:5] is the sub-list for method input_type
 	2, // [2:2] is the sub-list for extension type_name
 	2, // [2:2] is the sub-list for extension extendee
 	0, // [0:2] is the sub-list for field type_name
@@ -328,7 +378,7 @@ func file_proto_course_category_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_proto_course_category_proto_rawDesc), len(file_proto_course_category_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   5,
+			NumMessages:   6,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

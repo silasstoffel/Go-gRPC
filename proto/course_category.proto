@@ -28,11 +28,17 @@ message CreateCategoryInput {
     string description = 2;
 }
 
+message GetCategoryInput {
+    string id = 1;
+}
+
 service CategoryService {
 
     rpc CreateCategory (CreateCategoryInput) returns (Category) {}
 
     rpc GetCategories (Blank) returns (GetCategoriesOutput) {}
+
+    rpc GetCategory (GetCategoryInput) returns (Category) {}
 
 };
 
