@@ -36,6 +36,8 @@ service CategoryService {
 
     rpc CreateCategory (CreateCategoryInput) returns (Category) {}
 
+    rpc CreateCategoryStream (stream CreateCategoryInput) returns (GetCategoriesOutput) {}
+
     rpc GetCategories (Blank) returns (GetCategoriesOutput) {}
 
     rpc GetCategory (GetCategoryInput) returns (Category) {}

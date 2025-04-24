@@ -324,9 +324,10 @@ const file_proto_course_category_proto_rawDesc = "" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12 \n" +
 	"\vdescription\x18\x02 \x01(\tR\vdescription\"\"\n" +
 	"\x10GetCategoryInput\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id2\xb8\x01\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id2\x86\x02\n" +
 	"\x0fCategoryService\x129\n" +
-	"\x0eCreateCategory\x12\x17.pb.CreateCategoryInput\x1a\f.pb.Category\"\x00\x125\n" +
+	"\x0eCreateCategory\x12\x17.pb.CreateCategoryInput\x1a\f.pb.Category\"\x00\x12L\n" +
+	"\x14CreateCategoryStream\x12\x17.pb.CreateCategoryInput\x1a\x17.pb.GetCategoriesOutput\"\x00(\x01\x125\n" +
 	"\rGetCategories\x12\t.pb.Blank\x1a\x17.pb.GetCategoriesOutput\"\x00\x123\n" +
 	"\vGetCategory\x12\x14.pb.GetCategoryInput\x1a\f.pb.Category\"\x00B\rZ\vinternal/pbb\x06proto3"
 
@@ -355,13 +356,15 @@ var file_proto_course_category_proto_depIdxs = []int32{
 	1, // 0: pb.CategoryOutput.category:type_name -> pb.Category
 	1, // 1: pb.GetCategoriesOutput.categories:type_name -> pb.Category
 	4, // 2: pb.CategoryService.CreateCategory:input_type -> pb.CreateCategoryInput
-	0, // 3: pb.CategoryService.GetCategories:input_type -> pb.Blank
-	5, // 4: pb.CategoryService.GetCategory:input_type -> pb.GetCategoryInput
-	1, // 5: pb.CategoryService.CreateCategory:output_type -> pb.Category
-	3, // 6: pb.CategoryService.GetCategories:output_type -> pb.GetCategoriesOutput
-	1, // 7: pb.CategoryService.GetCategory:output_type -> pb.Category
-	5, // [5:8] is the sub-list for method output_type
-	2, // [2:5] is the sub-list for method input_type
+	4, // 3: pb.CategoryService.CreateCategoryStream:input_type -> pb.CreateCategoryInput
+	0, // 4: pb.CategoryService.GetCategories:input_type -> pb.Blank
+	5, // 5: pb.CategoryService.GetCategory:input_type -> pb.GetCategoryInput
+	1, // 6: pb.CategoryService.CreateCategory:output_type -> pb.Category
+	3, // 7: pb.CategoryService.CreateCategoryStream:output_type -> pb.GetCategoriesOutput
+	3, // 8: pb.CategoryService.GetCategories:output_type -> pb.GetCategoriesOutput
+	1, // 9: pb.CategoryService.GetCategory:output_type -> pb.Category
+	6, // [6:10] is the sub-list for method output_type
+	2, // [2:6] is the sub-list for method input_type
 	2, // [2:2] is the sub-list for extension type_name
 	2, // [2:2] is the sub-list for extension extendee
 	0, // [0:2] is the sub-list for field type_name
